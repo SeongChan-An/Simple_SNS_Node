@@ -35,6 +35,28 @@ routes 폴더에서 index.js 파일에서 항목(게시물, 로그인)에 따라
 AWS S3를 이용하여 bucket 공간에 사진을 관리할 수 있도록 하였다.  
 multer.js 파일 참고
 
+### **-회원가입, 로그인, 로그아웃**
+session 저장할 내용이 많을 경우 서버의 과부하가 올 수 있음.
+cookie를 통해 관리할 수도 있으나 cookie는 보안상 취약하다.
 
+>Json Web Token ?  
+토큰형태의 문자를 활용해서 클라이언트에 상태를 저장하여 인증에서 활용한다.
+
+>syntax  
+aaaaa.bbbbb.cccccc  
+a : header, 토큰의 유형(JWT)과 암호화 알고리즘 포함  
+b : payload, 토큰에 담을 정보를 포함  
+c : signature, secret key를 포함하여 암호화
+
+#### workflow
+1. 클라이언트가 id, pw를 서버에 전달
+2. id, pw를 secret key를 통해 JWT 토큰을 만든다(암호화)
+3. 만들어진 토큰을 클라이언트에게 전달
+4. 클라이언트는 해당 값을 cookie 또는 localStroage 같은 브라우저 저장공간에 보관한다.
+5. 클라이언트가 어떤 특정한 행위를 할 때 토큰을 함께 전달한다.
+6. 서버가 토큰을 확인하고 응답한다.
+
+참고   
+- 쿠키 vs 로컬스토리지 : [0307kwon님 velog](https://velog.io/@0307kwon/JWT%EB%8A%94-%EC%96%B4%EB%94%94%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C-localStorage-vs-cookie)
 
 

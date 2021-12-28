@@ -14,6 +14,12 @@
     - bcrypt (회원가입, 로그인)
     - aws-sdk (aws 접근)
 
+## 유틸 프로그램
+- POSTMAN
+  : data 전송을 통해 현재 서버의 통신 상태 확인
+- MongoDB Compass
+  : 데이터의 저장, 업데이트, 삭제 확인
+
 ## AWS S3
 1. AWS 홈페이지 접속
 2. 계정 연결
@@ -32,3 +38,5 @@
 11. 생성
 12 엑세스 키 ID와 비밀 엑세스 키를 보관 (유출 주의 !!!)
 
+## 기타 참고 내용
+- locals : [locals 비교](https://rat2.tistory.com/18)

@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+const jwtMiddleware = require("./module/jwtMiddleware");
 
 var app = express();
 
@@ -17,7 +18,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+// 로그인 유무
+app.use(jwtMiddleware);
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler

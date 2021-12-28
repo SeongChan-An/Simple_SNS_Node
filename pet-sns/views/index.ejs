@@ -149,6 +149,8 @@
       });
 
       $(() => {
+        const name = "<%= isAuthenticated.username %>";
+        
         const socket = io();
 
         $("#chat_form").submit(() => {
