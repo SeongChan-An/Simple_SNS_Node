@@ -59,4 +59,8 @@ c : signature, secret key를 포함하여 암호화
 참고   
 - 쿠키 vs 로컬스토리지 : [0307kwon님 velog](https://velog.io/@0307kwon/JWT%EB%8A%94-%EC%96%B4%EB%94%94%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C-localStorage-vs-cookie)
 
+### **-실시간 채팅**
+실시간 채팅 구현의 어려움
+- 기존 통신은 클라이언트가 서버에 요청을 해야지만 서버에서 응답을 보내주는 흐름이 정해져있었다.
+WebSocket의 등장으로 서버가 요청없이 클라이언트에 데이터를 줄 수 있게 되었다.
 
