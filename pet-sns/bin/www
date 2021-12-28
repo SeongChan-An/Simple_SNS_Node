@@ -7,10 +7,24 @@
 var app = require('../app');
 var debug = require('debug')('pet-sns:server');
 var http = require('http');
+// 개인정보 은닉을 위해 JSON 파일을 불러옴
+const dbConfig = require("../config/dbConfig.json");
 
 /**
  * Get port from environment and store in Express.
  */
+
+const mongoose = require("mongoose");
+const db = mongoose.connection;
+db.on("error", console.error);
+db.once("open", () => {
+  console.log("Connected to mongoDB server !");
+});
+
+mongoose.connect(
+  `mongodb+srv://${dbConfig.id}:${dbConfig.pw}@${dbConfig.dbName}.cf4iw.mongodb.net/${dbConfig.projectName}?retryWrites=true&w=majority`,
+  {useNewUrlParser: true, useUnifiedTopology: true}
+  );
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
